@@ -1,29 +1,52 @@
 <template>
   <div id="app">
+    <h1 class="font-bold text-2xl">Hello from Vue web component!</h1>
+    <div class="py-3">
+      <h3 class="font-semibold text-xl">
+        Current #count:
+        {{ count }}
+      </h3>
+      <button
+        type="button"
+        :class="actionButtonClasses"
+        @click="decrement"
+      >
+        Decrement
+      </button>
+      <button
+        type="button"
+        :class="actionButtonClasses"
+        @click="increment"
+      >
+        Increment
+      </button>
+    </div>
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
 
 export default Vue.extend({
   name: 'App',
-  components: {
-    HelloWorld,
+  data: () => ({
+    count: 0,
+    actionButtonClasses: 'font-bold inline-block duration-200 mt-2 px-2 py-1 rounded bg-gray-100 hover:bg-gray-200 last:ml-2',
+  }),
+  methods: {
+    increment() {
+      this.count += 1;
+    },
+    decrement() {
+      this.count -= 1;
+    },
   },
 });
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 </style>
