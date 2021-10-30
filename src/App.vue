@@ -21,7 +21,7 @@
         Increment
       </button>
     </div>
-    <img alt="Vue logo" src="./assets/logo.png">
+    <img alt="Vue logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/512px-Vue.js_Logo_2.svg.png">
   </div>
 </template>
 
